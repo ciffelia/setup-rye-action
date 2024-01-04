@@ -1,0 +1,13 @@
+name: 'setup-rye'
+description: 'Set up a specific version of Rye and add the shims directory to the PATH.'
+
+inputs:
+  rye-version:
+    description: 'The exact version of Rye to use.'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - run: '${{ github.action_path }}/setup-rye.sh'
+      shell: 'bash'
